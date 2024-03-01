@@ -1,5 +1,7 @@
 package org.ptch.java.citas.entities;
-import java.time.LocalDateTime;;
+import java.time.LocalDateTime;
+
+import org.ptch.java.citas.entities.enums.EstadoCita;;
 
 public class Cita {
 

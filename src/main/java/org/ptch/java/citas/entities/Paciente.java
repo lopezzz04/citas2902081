@@ -2,13 +2,11 @@ package org.ptch.java.citas.entities;
 
 import java.time.LocalDate;
 
-public class Paciente {
+import org.ptch.java.citas.entities.enums.TipoDocumento;
+import org.ptch.java.citas.entities.enums.TipoSangre;
 
-    private int id;
-    private String nombres;
-    private String apellidos;
-    private TipoDocumento tipoIdentificacion;
-    private Long numeroIdentificacion;
+public class Paciente extends Usuario{
+
     private String correo;
     private Long celular;
     private LocalDate fechaNacimiento;
@@ -17,17 +15,10 @@ public class Paciente {
     private TipoSangre tipoSangre;
     private char factorRH;
 
-    public Paciente() {
-    }
-
     public Paciente(int id, String nombres, String apellidos, TipoDocumento tipoIdentificacion,
             Long numeroIdentificacion, String correo, Long celular, LocalDate fechaNacimiento, Double altura,
             Double peso, TipoSangre tipoSangre, char factorRH) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.numeroIdentificacion = numeroIdentificacion;
+        super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificacion);
         this.correo = correo;
         this.celular = celular;
         this.fechaNacimiento = fechaNacimiento;
@@ -37,37 +28,12 @@ public class Paciente {
         this.factorRH = factorRH;
     }
 
-    public String getNombres() {
-        return nombres;
+    public Paciente(int id, String nombres, String apellidos, TipoDocumento tipoIdentificacion,
+            Long numeroIdentificacion) {
+        super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificacion);
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public TipoDocumento getTipoIdentificacion() {
-        return tipoIdentificacion;
-    }
-
-    public void setTipoIdentificacion(TipoDocumento tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
-    }
-
-    public Long getNumeroIdentificacion() {
-        return numeroIdentificacion;
-    }
-
-    public void setNumeroIdentificacion(Long numeroIdentificacion) {
-        this.numeroIdentificacion = numeroIdentificacion;
-    }
+    //geter and seters
 
     public String getCorreo() {
         return correo;
@@ -85,6 +51,30 @@ public class Paciente {
         this.celular = celular;
     }
 
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Double altura) {
+        this.altura = altura;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
     public TipoSangre getTipoSangre() {
         return tipoSangre;
     }
@@ -93,10 +83,12 @@ public class Paciente {
         this.tipoSangre = tipoSangre;
     }
 
-    
+    public char getFactorRH() {
+        return factorRH;
+    }
 
-    
-     
-    
+    public void setFactorRH(char factorRH) {
+        this.factorRH = factorRH;
+    }
 
 }

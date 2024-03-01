@@ -5,55 +5,39 @@ import java.time.LocalDateTime;
 
 import org.ptch.java.citas.entities.Cita;
 import org.ptch.java.citas.entities.Consultorio;
-import org.ptch.java.citas.entities.Especialidad;
-import org.ptch.java.citas.entities.EstadoCita;
+import org.ptch.java.citas.entities.Enfermero;
 import org.ptch.java.citas.entities.Medico;
 import org.ptch.java.citas.entities.Paciente;
-import org.ptch.java.citas.entities.TipoDocumento;
-import org.ptch.java.citas.entities.TipoSangre;
+import org.ptch.java.citas.entities.enums.Especialidad;
+import org.ptch.java.citas.entities.enums.EstadoCita;
+import org.ptch.java.citas.entities.enums.TipoDocumento;
+import org.ptch.java.citas.entities.enums.TipoSangre;
 
 public class Main {
     public static void main(String[] args) {
         
-        //Crer un objeto medico
-        //Instanciar u medico
-        //Una manea de dar valor a atributos privados a en una clase es a traves del constructor parametrico
-        Medico m = new Medico(1, "Jeorge", "Curioso", TipoDocumento.PPT, 1031809248L, 3242224242L, Especialidad.Otorrinolaringologia);
-        
-        //instanciar otro medico
-        Medico m2 = new Medico();
+        //Crear Medico
 
-        // se debe utilizar primero el setter del atributo a asiganr
+        Medico m1 = new Medico(1, "Santiago", "Lopez", TipoDocumento.CC, 12345L, 12345L, Especialidad.Cardiologia);
 
-        m2.setNombres("Yasuri");
-        m2.setApellidos("Yamile");
-        m2.setNumeroIdentificacion(123456576L);
-        System.out.println(m2.getNombres());
+        System.out.println("id del medico: " + m1.getId() + "|" + m1.getNombres() + "|" + m1.getApellidos() + "|");
 
-        System.out.println("----------------------------");
+        //Crando al enfermo este
 
-        Paciente p = new Paciente();
-        p.setNombres("Pepe");
-        p.setApellidos("Loro");
-        p.setNumeroIdentificacion(12345L);
-        p.setCelular(1234L);
-        p.setTipoSangre(TipoSangre.A);
-        System.out.println("Nombre Del Paciente: " + p.getNombres() + "|" + " Apellido Del Paciente: " + p.getApellidos() + "|" + " Identificacion Del Paciente: " + p.getNumeroIdentificacion() + "|" + " Celular Del Paciente: " + p.getCelular() + "|" + " Tipo De Sangre Del Paciente: " + p.getTipoSangre());
+        Enfermero e1 = new Enfermero(1, "Cuta", "Pablo", TipoDocumento.TI, 345678L);
 
-        System.out.println("----------------------------");
+        //añadir 2 procedimientos
 
-        Cita c = new Cita();
-        c.setEstado(EstadoCita.REALIZADA);
-        c.setFecha(LocalDateTime.now());
-        System.out.println("Estado De La Cita: " + c.getEstado() + "|" + " Fecha Cita: " + c.getFecha());
+        e1.addProcedure("Aplicar covid");
+        e1.addProcedure("Aplicar rabia");
 
-        System.out.println("----------------------------");
+        //recorrer los procedimientos de e1
 
-        Consultorio x = new Consultorio();
-        x.setNumero(2);
-        System.out.println("Numero Del Consultorio: " + x.getNumero());
+        for( String p : e1.getProcedimientos()){
 
+            System.out.println("Procedimiento: " + p);
 
+        }
 
 
     }

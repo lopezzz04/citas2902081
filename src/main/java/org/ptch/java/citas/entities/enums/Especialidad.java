@@ -1,4 +1,4 @@
-package org.ptch.java.citas.entities;
+package org.ptch.java.citas.entities.enums;
 
 public enum Especialidad {
 
