@@ -7,7 +7,7 @@ import org.ptch.java.citas.entities.enums.TipoDocumento;
 //clase maestra
 //clase base
 
-public  abstract class Usuario {
+public   class Usuario {
     
     //atributos a heredarse deben ser protected
 
@@ -16,6 +16,11 @@ public  abstract class Usuario {
     protected String apellidos;
     protected TipoDocumento tipoIdentificacion;
     protected Long numeroIdentificacion;
+
+    //Sobre escribir el metodo toString
+    public String toString(){
+        return "nombre:" + this.nombres;
+    }
 
     public Usuario(int id, String nombres, String apellidos, TipoDocumento tipoIdentificacion,
             Long numeroIdentificacion) {
@@ -65,6 +70,8 @@ public  abstract class Usuario {
     public void setNumeroIdentificacion(Long numeroIdentificacion) {
         this.numeroIdentificacion = numeroIdentificacion;
     }
+
+
 
     
 

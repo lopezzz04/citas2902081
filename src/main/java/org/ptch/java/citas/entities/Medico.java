@@ -14,11 +14,20 @@ public class Medico extends Usuario {
     private Long registroMedico;
     private Especialidad especialidad;
 
+    
+
+
     //Palabra reservada super:
     //hace referencia al estado(atributos) y comportamiento(metoos) de la clase padre
     //super llmada al constructor e la superclase
     //debe ser lo primero que aparezca en el
     //constructor de la clase hija
+
+    @Override
+    public String toString() {
+
+        return "Medico [registroMedico=" + registroMedico + ", especialidad=" + especialidad  + "nombres: " + super.nombres + super.apellidos + "]";
+    }
 
     public Medico(int id, String nombres, String apellidos, TipoDocumento tipoIdentificacion, Long numeroIdentificacion,
             Long registroMedico, Especialidad especialidad) {
