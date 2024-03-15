@@ -9,12 +9,15 @@ public class CitaMedico extends Cita implements IAgendable {
 
     Medico medico;
     EstadoCita estado;
+    private String Motivo;
 
-
-    public CitaMedico(int id, LocalDateTime fecha, Consultorio consultorio, Paciente paciente) {
+    
+    public CitaMedico(int id, LocalDateTime fecha, Consultorio consultorio, Paciente paciente, Medico medico,
+            EstadoCita estado, String motivo) {
         super(id, fecha, consultorio, paciente);
-        this.estado = EstadoCita.AGENDADA;
-        
+        this.medico = medico;
+        this.estado = estado;
+        Motivo = motivo;
     }
 
 
@@ -23,9 +26,13 @@ public class CitaMedico extends Cita implements IAgendable {
     }
 
 
+
+
     public void setMedico(Medico medico) {
         this.medico = medico;
     }
+
+
 
 
     public EstadoCita getEstado() {
@@ -33,9 +40,27 @@ public class CitaMedico extends Cita implements IAgendable {
     }
 
 
+
+
     public void setEstado(EstadoCita estado) {
         this.estado = estado;
     }
+
+
+
+
+    public String getMotivo() {
+        return Motivo;
+    }
+
+
+
+
+    public void setMotivo(String motivo) {
+        Motivo = motivo;
+    }
+
+
 
 
     @Override

@@ -19,6 +19,10 @@
         <item-type stereotype="enumeration" type-id="enumeration" type="Enumeration" />
         <value>1</value>
       </counter>
+      <counter>
+        <item-type stereotype="interface" type-id="uml-interface-classifier" type="Interface" />
+        <value>1</value>
+      </counter>
     </entity-names>
     <entity-ids>
       <counter>
@@ -31,11 +35,11 @@
       </counter>
       <counter>
         <item-type type-id="property" type="Property" />
-        <value>42</value>
+        <value>43</value>
       </counter>
       <counter>
         <item-type type-id="universal-connector" type="Universal Connector" />
-        <value>4</value>
+        <value>6</value>
       </counter>
       <counter>
         <item-type type-id="containment" type="Containment" />
@@ -61,6 +65,14 @@
         <item-type type-id="relationship" type="Association" />
         <value>6</value>
       </counter>
+      <counter>
+        <item-type type-id="uml-interface-classifier" type="Interface" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="realization" type="Realization" />
+        <value>3</value>
+      </counter>
     </entity-ids>
     <diagrams>
       <counter>
@@ -71,7 +83,7 @@
     <fields>
       <counter>
         <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
-        <value>43</value>
+        <value>44</value>
       </counter>
       <counter>
         <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.EnumerationItemField</type>
@@ -110,6 +122,7 @@
       <parameters />
       <types>
         <type id="Class:352cbbcb3a21447fb7ba8fbcc2afc709" name="CitaMedico" class-ref="352cbbcb3a21447fb7ba8fbcc2afc709" />
+        <type id="Consultorio" name="Consultorio" />
         <type id="(Enum Especialidades)" name="(Enum Especialidades)" />
         <type id="Enum(TipoSangre)" name="Enum(TipoSangre)" />
         <type id="Time" name="Time" />
@@ -160,7 +173,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-class" id="p2c1ba47187eb4f75b64738224604ad70_515278419" name="ClassDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-589,265" zoom="0.9">
+      <diagram type="uml-class" id="p2c1ba47187eb4f75b64738224604ad70_515278419" name="ClassDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-390,1040" zoom="0.9">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -172,7 +185,7 @@
           </authors>
           <description />
           <creation-date>02/23/2024 08:31:14</creation-date>
-          <change-date>03/08/2024 09:43:12</change-date>
+          <change-date>03/08/2024 10:10:55</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -315,6 +328,7 @@
               <end-role id="umlar-4e3f9b61-193e-4d86-83cf-694311a8b1fd" name="" navigability="" association-type="association" visibility="private" property-ref="04c011f16feb45338e211a5400e80c1e" />
             </relation>
           </item>
+          <item id="8a4130d4ddee495b876b2c41b9544449" cid="REA002" type="realization" owner="870da02fc7524acbaf8e19a677ec3b18" creation-date="03/08/2024 10:10:55" from="352cbbcb3a21447fb7ba8fbcc2afc709" to="710e25d913d2438dab127484da6f355f" visibility="package" />
           <item id="58a218ca1df743579677c00183ce057f" cid="C004" type="class" name="Enfermero" owner="870da02fc7524acbaf8e19a677ec3b18" creation-date="03/01/2024 10:32:35" visibility="undefined">
             <owned-items />
             <attributes>
@@ -465,6 +479,25 @@
           </item>
           <item id="236df1576485401c8127b0094b08383a" cid="PROP029" type="property" name="motivo" owner="352cbbcb3a21447fb7ba8fbcc2afc709" creation-date="03/08/2024 09:28:43" visibility="private">
             <structural-feature type="Medico" type-id="Class:330f9d6c49d044ffa1937772caaa32b5" />
+          </item>
+          <item id="710e25d913d2438dab127484da6f355f" cid="I001" type="uml-interface-classifier" name="IAgendable" owner="870da02fc7524acbaf8e19a677ec3b18" creation-date="03/08/2024 10:06:56">
+            <stereotypes>
+              <stereotype name="interface" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="710e25d913d2438dab127484da6f355f_interface_c" type="interface" creation-date="03/08/2024 10:06:56" ref="" />
+            </stereotype-instances>
+            <operations>
+              <operation id="o62040ceeb4104a6fa3ee0e79595ab0d5284" cid="OP043" name="agendarCita" creation-date="03/08/2024 10:07:44" type="Boolean" type-id="Uml.Boolean" visibility="public">
+                <parameters>
+                  <parameter id="pc2cc8216a542484e8a4c0b2c2c04fc49" name="fecha" type="DateTime" type-id="Uml.DateTime" creation-date="03/08/2024 10:09:13" />
+                  <parameter id="p9f472aaf1a714fec8b511a17403ac320" name="consultorio" type="Consultorio" type-id="Consultorio" creation-date="03/08/2024 10:09:43" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
           </item>
           <item id="352cbbcb3a21447fb7ba8fbcc2afc709" cid="C006" type="class" name="CitaMedico" owner="870da02fc7524acbaf8e19a677ec3b18" creation-date="03/08/2024 09:27:07">
             <owned-items />
@@ -743,7 +776,7 @@
             <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="488" y1="239" x2="327" y2="246" start-border-pos="0.8921875" end-border-pos="0.30234375" start-local-pos="69" end-local-pos="33.5" name-position="0,20">
               <points>
                 <point x="488" y="239" />
-                <point x="414" y="168" />
+                <point x="413" y="240" />
                 <point x="327" y="246" />
               </points>
             </layout>
@@ -802,6 +835,11 @@
             </layout>
             <relation from="352cbbcb3a21447fb7ba8fbcc2afc709" from-iid="62f8d255cdb44843bcc3ff5198ea10d5" to="0bb61541ab3149bca3f46d62d3d86bb9" to-iid="40d6274aaab64287a2ff06db08c0f4b5" />
           </item>
+          <item id="710e25d913d2438dab127484da6f355f" iid="c39dee173dbd4c198e93f9a47b84bb91" container="870da02fc7524acbaf8e19a677ec3b18" container-iid="a30020291fe24abea9f2d3ab65881585" creation-date="03/08/2024 10:06:56" order-index="19" type="entity">
+            <layout ax="656.65393" ay="1708.1125" awidth="253" aheight="284" x="656.65393" y="1708.1125" width="253" height="284" />
+            <classifier />
+            <class />
+          </item>
           <item id="6889698482d1459493da1f0f69e0a8bd" iid="545fc1c41f654c63923a433b6cf2b5b2" container="870da02fc7524acbaf8e19a677ec3b18" container-iid="a30020291fe24abea9f2d3ab65881585" creation-date="03/08/2024 09:43:12" order-index="18" type="relation">
             <layout start-role-position="25.11764,-45.999886" end-role-position="23.936764,-30.995909" start-multiplicity-position="24.907413,32.99991" end-multiplicity-position="24.071083,33.0038" line-style="oblique" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="-210" y1="798" x2="513" y2="1575" start-border-pos="0.6780921369791031" end-border-pos="0.6251474618911743" start-local-pos="67.305756" end-local-pos="69.91742" name-position="0,20">
               <points>
@@ -812,6 +850,16 @@
               </points>
             </layout>
             <relation from="330f9d6c49d044ffa1937772caaa32b5" from-iid="985f7cc3b04c4edc8ed8011387a9ab9e" to="352cbbcb3a21447fb7ba8fbcc2afc709" to-iid="62f8d255cdb44843bcc3ff5198ea10d5" />
+          </item>
+          <item id="8a4130d4ddee495b876b2c41b9544449" iid="d15cefc73aee4d318c1b1a4fda6ec78b" container="870da02fc7524acbaf8e19a677ec3b18" container-iid="a30020291fe24abea9f2d3ab65881585" creation-date="03/08/2024 10:10:55" order-index="20" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="583" y1="1521" x2="783" y2="1708" start-border-pos="0.4175113584937119" end-border-pos="0.12484789460072876" start-local-pos="109.88745" end-local-pos="126.34607" name-position="0,20">
+              <points>
+                <point x="583" y="1521" />
+                <point x="583.0826" y="1576" />
+                <point x="783" y="1708" />
+              </points>
+            </layout>
+            <relation from="352cbbcb3a21447fb7ba8fbcc2afc709" from-iid="62f8d255cdb44843bcc3ff5198ea10d5" to="710e25d913d2438dab127484da6f355f" to-iid="c39dee173dbd4c198e93f9a47b84bb91" />
           </item>
         </layer>
       </diagram>
